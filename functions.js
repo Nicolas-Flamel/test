@@ -1,3 +1,4 @@
+//три ползунка
 function loanTermSliderVal() {
     var sliderValue = document.getElementById("loanTermSlider").value;
     var text = document.getElementById("loanTerm");
@@ -26,7 +27,9 @@ function credit() {
         alert("Цена автомобиля должна быть больше первоначального взноса!")
     } else {
         var monthlyPayment = (annuityCoeff * creditSum).toFixed(0);
+        //значение ежемесячного платежа в div
         document.getElementById('monthlyPayment').innerHTML = "Ваш ежемесячный платеж: " + monthlyPayment;
+        //значение ежемесячного платежа в скрытый input, из которого значение посылается через $_POST на почту
         document.getElementById('monthlyPaymentInput').value = monthlyPayment;
         document.getElementById('sent').style.visibility = "visible";
     }
