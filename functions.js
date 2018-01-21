@@ -18,9 +18,9 @@ function anInitialFeeSliderVal() {
 
 function credit() {
     var loanTerm = document.getElementById('loanTerm').value;
-    var interestRate = 11.83/1200;
+    var interestRate = 11.83 / 1200;
     var creditSum = document.getElementById('carPrice').value - document.getElementById('anInitialFee').value;
-    var annuityCoeff = interestRate * Math.pow(1+interestRate, loanTerm) / (Math.pow(1+interestRate, loanTerm)-1);
+    var annuityCoeff = interestRate * Math.pow(1 + interestRate, loanTerm) / (Math.pow(1 + interestRate, loanTerm) - 1);
 
     if (creditSum < 0) {
         alert("Цена автомобиля должна быть больше первоначального взноса!")
