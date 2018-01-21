@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="functions.js"></script>
+    <title>Кредитный калькулятор для автокредита</title>
+</head>
+<body>
+<form action="mail_sender.php" method="post">
+        <p>Имя:<input type="text" size="46" pattern="^[А-Яа-яЁё]+$" id="firstName" name="firstName" value="" placeholder="Не должно быть символов, цифр, используйте кириллицу" autofocus required></p>
+        <p>Email:<input type="email" size="45" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="email" name="email" value="" required></p>
+        <p>Телефон:<input type="tel" size="42" pattern="^[\+0-9]+$" id="phone" name="phone" value="" placeholder="Разрешены цифры и символ '+'" required></p>
+        <p>Цена автомобиля:<input type="text" size="34" pattern="^[0-9]+[^!@#$%^&*()_\-=+]$" id="carPrice" name="carPrice" value="" placeholder="Положительные цифры" required></p>
+        <input type="range" min="1" max="99999999" value="1" step="1000" id="carPriceSlider" oninput="carPriceSliderVal()"><br>
+        <p>Первоначальный взнос:<input type="text" size="50" pattern="^[0-9]+[^!@#$%^&*()_\-=+]$" id="anInitialFee" name="anInitialFee" value="" placeholder="Положительные цифры, не больше значения цены автомобиля" required></p>
+        <input type="range" min="1" max="99999999" value="1" step="1000" id="anInitialFeeSlider" oninput="anInitialFeeSliderVal()"><br>
+        <p>Срок кредита:<input type="text" size="37" pattern="^[0-9]+[^!@#$%^&*()_\-=+]$" id="loanTerm" name="loanTerm" value="" placeholder="Положительные цифры" required></p>
+        <input type="range" min="1" max="200" value="1" step="1" id="loanTermSlider" oninput="loanTermSliderVal()">
+        <input type="text" name="monthlyPaymentInput" id="monthlyPaymentInput" value="" style="display: none;">
+        <div id="monthlyPayment"></div>
+        <button id="sent" style="visibility:hidden;">Согласен?</button>
+</form>
+    <button id="credit" onClick="credit();">Рассчитать</button>
+</body>
+</html>
